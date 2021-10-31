@@ -1,0 +1,1 @@
+setTimeout(function(){ alert("HHola, acaba de pasar 1 minuto mi rey"); }, 60000);

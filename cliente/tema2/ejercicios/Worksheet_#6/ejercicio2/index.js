@@ -1,0 +1,1 @@
+document.write("El numero de enlaces son: "+direcciones.length)

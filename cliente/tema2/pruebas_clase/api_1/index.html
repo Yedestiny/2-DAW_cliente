@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"
+    type="text/javascript" charset="utf-8"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"
+    type="text/javascript" charset="utf-8"></script>
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <div style="width: 640px; height: 480px" id="mapContainer"></div>
+ <script>// Initialize the platform object:
+    var platform = new H.service.Platform({
+        'apikey': '4orZFPdNHYNSr2q0vERvdFmM47CZHr-doAS4nqGKrKc'
+      });
+    
+      
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var maptypes = platform.createDefaultLayers();
+    
+    var map = new H.Map(
+      document.getElementById('mapContainer'),
+      maptypes.vector.normal.map,
+      {
+        zoom: 16,
+        center: { lng: position.coords.longitude, lat: position.coords.latitude}
+        
+      });
+    
+var svgMarkup = '<svg width="24" height="24" ' +
+    'xmlns="http://www.w3.org/2000/svg">' +
+    '<rect stroke="white" fill="#1b468d" x="1" y="1" width="22" ' +
+    'height="22" /><text x="12" y="18" font-size="12pt" ' +
+    'font-family="Arial" font-weight="bold" text-anchor="middle" ' +
+    'fill="white">H</text></svg>';
+
+var icon = new H.map.Icon(svgMarkup),
+    coords = {lat: position.coords.latitude, lng: position.coords.longitude},
+    marker = new H.map.Marker(coords, {icon: icon});
+map.addObject(marker);
+map.setCenter(coords);
+});
+
+        </script>
+  </body>
+</html>
