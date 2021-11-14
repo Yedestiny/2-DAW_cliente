@@ -1,0 +1,33 @@
+button{
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    background: #3d348b;
+    box-shadow: 0 5px #2c0b8e;
+};
+
+img{
+    border: 15px solid; color: orange;
+};
+.texto-encima{
+    position: absolute;
+    top: 40px;
+    left: 1050px;
+    font-family: georgia, serif;
+    font-size: 60px;
+    font-weight: bold;
+    font-style: italic;
+    letter-spacing: 0pt;
+    word-spacing: -4.6pt;
+    line-height: 1.2;
+    color: #fcfcfc;
+
+};
+
